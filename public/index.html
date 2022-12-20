@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlaBank</title>
+
+    <!-- File's External -->
+    <link href="output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- File's External -->
+  </head>
+  <body class="grid grid-rows-[repeat(3, minmax(auto, 1fr))]">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="mask.js"></script>
+
+    <script type="module">
+      import { sayHi } from "./javascript.js";
+      sayHi();
+    </script>
+
+    <header class="flex content-center m-auto">
+      <div class="flex m-auto">
+        <h1 class="flex justify-end w-fit">AlaBank</h1>
+        <nav class="flex justify-start items-center">
+          <div class="">
+            <ul class="menu-home font-sans font-normal">
+              <li>SOBRE</li>
+              <li>CONTATO</li>
+              <li>POLITICA DE PRIVACIDADE</li>
+              <li>LOGIN</li>
+              <li>COMECE AGORA</li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="clear-both"></div>
+    </header>
+    <section
+      class="grid grid-cols-2 justify-items-center items-center p-5 hover:text-white!important delay-100 transition"
+    >
+      <!-- cor do bg: bg-slate-700 p-2.5-->
+      <div class="text-white">
+        <h1 id="name"></h1>
+        <p class="font-sans text-base text-black">
+          O Banco pronto, preparado e seguro para satisfazer todas suas
+          necessidades financeira. Sem extresse, sem bug, sem enrolação,
+          aprovação imediata e te ouvir é nosso maior elo que queremos ter com
+          você.
+        </p>
+        <form action="get" class="text-left">
+          <label id="label_double" for="cpf">
+            <input
+              id="cpf"
+              type="text"
+              value=""
+              name="cpf"
+              class="form-w text-slate-900 outline-none p-2.5 m-2.5 rounded-3xl font-sans"
+              placeholder="CPF"
+              maxlength="14"
+              onkeydown="javascript: fMasc( this, mCPF );"
+              onkeyup="ValidaCPF();"
+              required
+            />
+            <input
+              id="btn_va"
+              class="btn_nosso bg-slate-700 font-sans text-black font-normal"
+              style="display: none"
+              type="button"
+              value="CONTINUE"
+            />
+          </label>
+        </form>
+      </div>
+      <div class="max-w-lg rounded-full text-slate-200 flex">
+        <img src="../imagens/image-bank-ilustre/alabank-ilustre.png" alt="" />
+      </div>
+      <div class="clear-both"></div>
+    </section>
+    <footer class="box-border m-4">
+      <small class="font-sans margin-auto py-3"
+        >&copy; AlaBank | Todos os direitos reservados</small
+      >
+    </footer>
+  </body>
+</html>
